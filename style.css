@@ -1,0 +1,69 @@
+.container {
+  color: rgb(255, 255, 255);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px black;
+  margin: 10px auto;
+}
+
+button {
+  background-color: rgb(250, 249, 250);
+  color: rgb(3, 3, 3);
+  font-family: 'Montserrat', sans-serif;
+  padding: 0.5rem;
+  margin: 5px;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+button:hover {
+  background-color: rgb(236, 45, 109);
+  color: white;
+}
+button:active {
+  transform: translate(0, 2px);
+}
+
+h2 {
+  margin: 0px 0px 5px;
+  text-align: center;
+}
+
+.container {
+  padding: 0.5em 1em 1em;
+  background-color: #696cfa;
+  border-radius: 10px;
+  border: 1px solid rgb(0, 0, 0);
+}
+
+.form__wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  border: 1px solid rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  margin: 5px;
+  padding: 8px;
+  border-radius: 10px;
+}
+.card {
+  background-color: rgb(220, 43, 226);
+  border: 1px solid rgb(255, 255, 255);
+  padding: 5px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.card__field {
+  margin: 5px;
+  font-size: 1.2rem;
+}
+
+@media (min-width: 800px) {
+  .container {
+    max-width: 30vw;
+  }
+}
