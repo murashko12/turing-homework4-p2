@@ -1,21 +1,35 @@
 // Import stylesheets
 import './style.css';
 
-const nameInput = document.getElementById('#name');
-const phoneInput = document.getElementById('#phone');
-const addBtn = document.getElementById('#addBtn');
+const nameInput = document.querySelector('#name');
+const phoneInput = document.querySelector('#phone');
 
-function addData() {
-  // event.preventDefault();
-  const newPerson = {
-    name: nameInput.value,
-    phone: phoneInput.value,
-  };
-  const newBlock = document.createElement('div');
-  const cardContainer = document.getElementsByClassName('.container');
-  newBlock.classList.add('card');
-  newBlock.innerHTML = `<div class="card__field">${nameInput.value}</div><div class="card__field">${phoneInput.value}</div>`;
-  cardContainer.appendChild(newBlock);
-}
+const addBtn = document.querySelector('button');
 
-addBtn.addEventListener('click', addData);
+addBtn.addEventListener('click', (event) => {
+  event.preventDefault();
+
+  if (!phoneInput.value || !nameInput.value) {
+    alert('Поля не заполнены!');
+  } else {
+    const cardContainer = document.querySelector('.card__container');
+    const card = document.createElement('div');
+    card.classList.add('card');
+
+    const nameValue = document.createElement('div');
+    nameValue.classList.add('card__field');
+    nameValue.innerText = nameInput.value;
+
+    const phoneValue = document.createElement('div');
+    phoneValue.classList.add('card__field');
+    phoneValue.innerText = phoneInput.value;
+
+    card.appendChild(nameValue);
+    card.appendChild(phoneValue);
+
+    cardContainer.appendChild(card);
+    // очистка полей
+    nameInput.value = '';
+    phoneInput.value = '';
+  }
+});
